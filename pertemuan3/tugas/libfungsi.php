@@ -1,43 +1,58 @@
 <?php
-/**
-* Task 4 - Function
-* function kelulusan
-* function grade
-* function predikat
-*/
+function dataNilai($uts, $uas, $tugas){
+	$total = $uts + $uas + $tugas;
+	$dn = $total/3;
 
-	function kelulusan(){
-		/**
-		* Function kelulusan, jika:
-		* total nilai lebih dari 55 maka lulus
-		* total nilai kurang dari 55 maka tidak lulus
-		*/
+	return $dn;
+}
+
+	function kelulusan($dn){
+		if ($dn >= 55) {
+			return 'Lulus' ;
+		}else {
+			return 'Tidak Lulus';
+		}
+	}
+
+	
+	function grade($dt) {
+		if ($dn <= 100) {
+			return 'A' ;
+		}elseif ($dn <= 84) {
+			return 'B';
+		}elseif ($dn <= 69) {
+			return 'C' ;
+		}elseif ($dn <= 55) {
+			return 'D';
+		}elseif ($dn <= 35) {
+			return 'E' ;
+		}else {
+			return 'I';
+		}
 	}
 	
-	function grade() {
-	  /**
-		* Function grade, jika:
-		* total nilai <= 100 maka A
-		* total nilai <= 84 maka B
-		* total nilai <= 69 maka C
-		* total nilai <= 55 maka D
-		* total nilai <= 35 maka E
-		* selain itu maka I
-		*/ 
+	function predikat($dn){
+		switch (grade($dn)){
+			case 'A' ;
+				return 'Sangat Memuaskan' ;
+				break;
+			case 'B' ;
+				return 'Memuaskan';
+				break;
+			case 'C' ;
+				return 'Cukup' ;
+				break;
+			case 'D' ;
+				return 'Kurang';
+				break;
+			case 'E' ;
+				return 'Sangat Kurang';
+				break;
+			default ;
+				return 'Tidak Ada' ;
+				break;
+		}
 	}
+		
 	
-	function predikat(){
-		/**
-		* Function predikat, jika:
-		* grade A maka Sangat Memuaskan
-		* grade B maka Memuaskan
-		* grade C maka Cukup
-		* grade D maka Kurang
-		* grade E maka Sangat Kurang
-		* selain itu maka Tidak Ada
-		*
-		* Tips: Gunakan switch untuk mempermudah 
-		* melakukan pengecekan kondisi berdasarkan function grade
-		*/ 
-	}
 ?>

@@ -1,3 +1,6 @@
+<?php
+    include_once 'header.php' ;
+?>
 <div class="container">
   <h2>Data Mahasiswa</h2>
   <table class="table">
@@ -49,7 +52,33 @@
 					* 3. Berikan error handling untuk mengatasi ketika form belum disubmit
 					* Note: Sesuaikan dengan isi table yang sudah ada						
 					*/
-          ?>
+
+					require_once 'libfungsi.php';
+						$no=3;
+						$nama = $_POST['nama_lengkap'];
+						$matkul = $_POST['matkul'];
+						$uts = $_POST['nilai_uts'];
+						$uas = $_POST['nilai_uas'];
+						$tugas = $_POST['nilai_tugas'];
+						$dn = dataNilai($uts, $uas, $tugas);
+						$grade = grade($dn);
+						$predikat = predikat($dn);
+						$kelulusan = kelulusan($dn);
+
+						echo '<td> ' . $no;
+						echo '<td> ' . $nama;
+						echo '<td> ' . $matkul;
+						echo '<td> ' . $uts;
+						echo '<td> ' . $uas;
+                        echo '<td> ' . $tugas;
+                        echo '<td> ' . $dn;
+                        echo '<td> ' . $grade;
+                        echo '<td> ' . $predikat;
+                        echo '<td> ' . $kelulusan;
+            ?>
       </tbody>
   </table>
 </div>
+<?php
+    include_once 'footer.php' ;
+?>
