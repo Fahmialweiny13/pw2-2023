@@ -43,5 +43,5 @@
     echo "<br>";
     echo "Hasil Perkalian = " . $calculator->getKali();
     echo "<br>";
-    echo "Hasil Pembagian = " . $calculator->getBagi();
+    echo "Hasil 'Pembagian = " . $calculator->getBagi();
 ?>
