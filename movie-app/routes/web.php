@@ -21,7 +21,6 @@ Route::get('/', function () {
 });
 
 Route::get('/movies', [MovieController::class, 'index']);
-<<<<<<< HEAD
 Route::get('/movies/create', [MovieController::class, 'create']);
 Route::post('/movies', [MovieController::class, 'store']);
 Route::delete('movies/{movie}', [MovieController::class, 'destroy']);
@@ -35,9 +34,3 @@ Route::get('/reviews', [ReviewController::class, 'index']);
 Route::get('/reviews/create', [ReviewController::class, 'create']);
 Route::post('/reviews', [ReviewController::class, 'store']);
 Route::delete('reviews/{review}', [ReviewController::class, 'destroy']);
-=======
-
-Route::get('/genres', [GenreController::class, 'index']);
-
-Route::get('/reviews', [ReviewController::class, 'index']);
->>>>>>> 4fa5fe5a0d8d649ab2359b0d6db79c61c414a205

@@ -25,23 +25,23 @@
         <div class="card-body">
             <form method="POST" action="/reviews">
                 @csrf
-                <div>
+                <div class="card mb-4">
                     <label for="film">Film:</label>
                     <input type="text" id="film" name="film">
                 </div>
-                <div>
+                <div class="card mb-4">
                     <label for="user">User:</label>
                     <input type="text" id="user" name="user">
                 </div>
-                <div>
+                <div class="card mb-4">
                     <label for="rating">Rating:</label>
                     <input type="float" id="rating" name="rating">
                 </div>
-                <div>
+                <div class="card mb-4">
                     <label for="review">Review:</label>
                     <input type="text" id="review" name="review">
                 </div>
-                <div>
+                <div class="card mb-4">
                     <label for="tanggal">Date:</label>
                     <input type="date" id="tanggal" name="tanggal">
                 </div>

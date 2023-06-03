@@ -7,7 +7,6 @@
         <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
         <li class="breadcrumb-item active">Genres</li>
     </ol>
-<<<<<<< HEAD
     <a href="/genres/create">
         <button class="btn btn-success" type="submit">Create Data</button>
     </a>
@@ -17,12 +16,6 @@
     {{ session('success') }}
     </div>
 @endif
-=======
-    <a href="#">
-        <button class="btn btn-success" type="submit">Create Data</button>
-    </a>
-</div>
->>>>>>> 4fa5fe5a0d8d649ab2359b0d6db79c61c414a205
 <div class="card mb-4">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
@@ -54,16 +47,12 @@
                     <td>{{ $genre->deskripsi }}</td>
                     <td>
                         <a href="" class="btn btn-sm btn-warning"> Edit</a>
-<<<<<<< HEAD
                         <form action="/genres/{{ $genre->id }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-sm btn-danger"
                             onclick="return confirm('Apakah Anda yakin ingin menghapus?')">Delete</button>
                         </form>
-=======
-                        <a href="" class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?')"> Delete</a>
->>>>>>> 4fa5fe5a0d8d649ab2359b0d6db79c61c414a205
                     </td>
                 </tr>
                 @endforeach    

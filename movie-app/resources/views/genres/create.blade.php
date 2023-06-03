@@ -22,14 +22,15 @@
             <i class="fas fa-table me-1"></i>
             Genres Data
         </div>
+        
         <div class="card-body">
             <form method="POST" action="/genres">
                 @csrf
-                <div>
+                <div class="card mb-4">
                     <label for="nama">Genre Name:</label>
                     <input type="text" id="nama" name="nama">
                 </div>
-                <div>
+                <div class="card mb-4">
                     <label for="deskripsi">Deskripsi:</label>
                     <input type="text" id="deskripsi" name="deskripsi">
                 </div>

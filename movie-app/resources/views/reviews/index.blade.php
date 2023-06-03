@@ -7,11 +7,7 @@
         <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
         <li class="breadcrumb-item active">Reviews</li>
     </ol>
-<<<<<<< HEAD
     <a href="/reviews/create">
-=======
-    <a href="#">
->>>>>>> 4fa5fe5a0d8d649ab2359b0d6db79c61c414a205
         <button class="btn btn-success" type="submit">Create Data</button>
     </a>
 </div>
@@ -53,7 +49,6 @@
                     <td>{{ $review->rating }}</td>
                     <td>{{ $review->review }}</td>
                     <td>{{ $review->tanggal }}</td>
-<<<<<<< HEAD
                     <td class="d-flex justify-content-between mb-4">
                         <a href="" class="btn btn-sm btn-warning"> Edit</a>
                         <form action="/reviews/{{ $review->id }}" method="POST">
@@ -62,11 +57,6 @@
                             <button type="submit" class="btn btn-sm btn-danger" 
                             onclick="return confirm('Apakah Anda yakin ingin menghapus?')">Delete</button>
                         </form>
-=======
-                    <td>
-                        <a href="" class="btn btn-sm btn-warning"> Edit</a>
-                        <a href="" class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?')"> Delete</a>
->>>>>>> 4fa5fe5a0d8d649ab2359b0d6db79c61c414a205
                     </td>
                 </tr>
                 @endforeach

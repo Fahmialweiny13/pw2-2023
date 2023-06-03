@@ -24,13 +24,9 @@ class GenreController extends Controller
      */
     public function create()
     {
-<<<<<<< HEAD
         $genres = Genre::all();
 
         return view('genres.create', compact('genres'));
-=======
-        //
->>>>>>> 4fa5fe5a0d8d649ab2359b0d6db79c61c414a205
     }
 
     /**
@@ -41,7 +37,6 @@ class GenreController extends Controller
      */
     public function store(Request $request)
     {
-<<<<<<< HEAD
         $validateData = $request->validate([
             'nama' => 'required',
             'deskripsi' => 'required',
@@ -49,9 +44,6 @@ class GenreController extends Controller
 
         Genre::create($validateData);
         return redirect('/genres')->with('success', 'Data berhasil ditambahkan');
-=======
-        //
->>>>>>> 4fa5fe5a0d8d649ab2359b0d6db79c61c414a205
     }
 
     /**
@@ -96,12 +88,8 @@ class GenreController extends Controller
      */
     public function destroy(Genre $genre)
     {
-<<<<<<< HEAD
     $genre->delete();
 
     return redirect('/genres')->with('success', 'Data berhasil dihapus');
-=======
-        //
->>>>>>> 4fa5fe5a0d8d649ab2359b0d6db79c61c414a205
     }
 }

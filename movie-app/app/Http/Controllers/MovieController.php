@@ -2,10 +2,7 @@
 
 namespace App\Http\Controllers;
 
-<<<<<<< HEAD
 use App\Models\Genre;
-=======
->>>>>>> 4fa5fe5a0d8d649ab2359b0d6db79c61c414a205
 use App\Models\Movie;
 use Illuminate\Http\Request;
 
@@ -28,13 +25,9 @@ class MovieController extends Controller
      */
     public function create()
     {
-<<<<<<< HEAD
         $genres = Genre::all();
 
         return view('movies.create', compact('genres'));
-=======
-        //
->>>>>>> 4fa5fe5a0d8d649ab2359b0d6db79c61c414a205
     }
 
     /**
@@ -45,7 +38,6 @@ class MovieController extends Controller
      */
     public function store(Request $request)
     {
-<<<<<<< HEAD
         $validateData = $request->validate([
             'judul' => 'required',
             'poster' => 'required',
@@ -57,9 +49,6 @@ class MovieController extends Controller
 
         Movie::create($validateData);
         return redirect('/movies')->with('success', 'Data berhasil ditambahkan');
-=======
-        //
->>>>>>> 4fa5fe5a0d8d649ab2359b0d6db79c61c414a205
     }
 
     /**
@@ -104,11 +93,7 @@ class MovieController extends Controller
      */
     public function destroy(Movie $movie)
     {
-<<<<<<< HEAD
         $movie->delete();
         return redirect('/movies')->with('success', 'Data berhasil dihapus');
-=======
-        //
->>>>>>> 4fa5fe5a0d8d649ab2359b0d6db79c61c414a205
     }
 }

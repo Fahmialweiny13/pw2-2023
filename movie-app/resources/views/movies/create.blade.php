@@ -25,15 +25,15 @@
         <div class="card-body">
             <form method="POST" action="/movies">
                 @csrf
-                <div>
+                <div class="card mb-4">
                     <label for="judul">Title:</label>
                     <input type="text" id="judul" name="judul">
                 </div>
-                <div>
+                <div class="card mb-4">
                     <label for="poster">Poster:</label>
                     <input type="text" id="poster" name="poster">
                 </div>
-                <div>
+                <div class="card mb-4">
                     <label for="genre">Genre:</label>
                     <select id="genre" name="genre_id">
                         @foreach ($genres as $genre)
@@ -41,15 +41,15 @@
                         @endforeach
                     </select>
                 </div>
-                <div>
+                <div class="card mb-4">
                     <label for="negara">Country:</label>
                     <input type="text" id="negara" name="negara">
                 </div>
-                <div>
+                <div class="card mb-4">
                     <label for="tahun">Year:</label>
                     <input type="text" id="tahun" name="tahun">
                 </div>
-                <div>
+                <div class="card mb-4">
                     <label for="rating">Rating:</label>
                     <input type="text" id="rating" name="rating">
                 </div>

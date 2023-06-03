@@ -28,7 +28,6 @@ class GenresSeeder extends Seeder
             'nama' => 'Comedy',
             'deskripsi' => 'Genre comedy adalah genre film di mana penekanan utama adalah pada kelucuan',
         ]);
-<<<<<<< HEAD
 
         Genre::create([
             'nama' => 'Thriller',
@@ -39,7 +38,5 @@ class GenresSeeder extends Seeder
             'nama' => 'Romance',
             'deskripsi' => 'Genre romance adalah genre film di mana lebih ke arah percintaan',
         ]);
-=======
->>>>>>> 4fa5fe5a0d8d649ab2359b0d6db79c61c414a205
     }
 }
