@@ -11,6 +11,11 @@
         <button class="btn btn-success" type="submit">Create Data</button>
     </a>
 </div>
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
 <div class="card mb-4">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
@@ -50,7 +55,7 @@
                     <td>{{ $review->review }}</td>
                     <td>{{ $review->tanggal }}</td>
                     <td class="d-flex justify-content-between mb-4">
-                        <a href="" class="btn btn-sm btn-warning"> Edit</a>
+                        <a href="/reviews/{{ $review->id }}/edit" class="btn btn-sm btn-warning"> Edit</a>
                         <form action="/reviews/{{ $review->id }}" method="POST">
                             @csrf
                             @method('DELETE')

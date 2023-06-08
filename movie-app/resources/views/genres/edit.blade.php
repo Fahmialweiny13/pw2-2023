@@ -22,21 +22,20 @@
     <div class="card mb-4">
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
-            Genres Data
+            Edit Data
         </div>
-        
         <div class="card-body">
-            <form method="POST" action="/genres">
+            <form method="POST" action="/genres/{{ $genre->id }}">
                 @csrf
-                <div class="card mb-4">
-                    <label for="nama">Genre Name:</label>
-                    <input type="text" id="nama" name="nama" class="form-control">
-                </div>
-                <div class="card mb-4">
-                    <label for="deskripsi">Deskripsi:</label>
-                    <input type="text" id="deskripsi" name="deskripsi" class="form-control">
-                </div>
-                <button type="submit">Add</button>
+                @method('PUT')
+                <label for="nama">Nama Genre:</label><br>
+                <input type="text" id="nama" name="nama" value="{{ $genre->nama }}" class="form-control"><br><br>
+
+                <label for="deskripsi">Deskripsi:</label><br>
+                <input type="text" id="deskripsi" name="deskripsi" value="{{ $genre->deskripsi }}" class="form-control"><br><br>
+
+                <button type="submit" class="btn btn-primary">Update Genre</button>
+                
             </form>
         </div>
     </div>
