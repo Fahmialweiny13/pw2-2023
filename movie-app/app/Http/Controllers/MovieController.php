@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Genre;
 use App\Models\Movie;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class MovieController extends Controller
 {
@@ -46,6 +47,17 @@ class MovieController extends Controller
             'tahun' => 'required|integer',
             'rating' => 'required|numeric',
         ]);
+
+        // upload the image
+        if($request->hasfile('poster')) {
+            // set image name
+            $extension = $request->file('poster')->getClientOriginalExtension();
+            $imageName = time() . '.' . $extension;
+      
+            // save image to storage
+            $request->file('poster')->storeAs('assets/img', $imageName, 'public');
+            $validateData['poster'] = $imageName;
+        }
 
         Movie::create($validateData);
         return redirect('/movies')->with('success', 'Data berhasil ditambahkan');
@@ -91,6 +103,20 @@ class MovieController extends Controller
             'tahun' => 'required|integer',
             'rating' => 'required|numeric',
         ]);
+
+        if($request->hasFile('poster')) {
+            // delete old image
+            Storage::disk('public')->delete('assets/img/'.$movie->poster);
+
+            // set image name
+            $extension = $request->file('poster')->getClientOriginalExtension();
+            $imageName = time() . '.' . $extension;
+       
+            // save image to storage
+            $request->file('poster')->storeAs('assets/img', $imageName, 'public');
+            $validateData['poster'] = $imageName;
+
+        }
 
         $movie->update($validateData);
         return redirect('/movies')->with('success','Data berhasil diupdate');

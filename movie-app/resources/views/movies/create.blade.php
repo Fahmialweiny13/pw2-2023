@@ -25,17 +25,19 @@
             Movies Data
         </div>
         <div class="card-body">
-            <form method="POST" action="/movies">
+            <form enctype="multipart/form-data" method="POST" action="/movies">
                 @csrf
-                <div class="card mb-4">
+                <div>
                     <label for="judul">Title:</label>
                     <input type="text" id="judul" name="judul" class="form-control">
                 </div>
-                <div class="card mb-4">
+                <br>
+                <div>
                     <label for="poster">Poster:</label>
-                    <input type="text" id="poster" name="poster" class="form-control">
+                    <input type="file" id="poster" name="poster" class="form-control">
                 </div>
-                <div class="card mb-4">
+                <br>
+                <div>
                     <label for="genre">Genre:</label>
                     <select id="genre" name="genre_id" class="form-control">
                         @foreach ($genres as $genre)
@@ -43,18 +45,22 @@
                         @endforeach
                     </select>
                 </div>
-                <div class="card mb-4">
+                <br>
+                <div>
                     <label for="negara">Country:</label>
                     <input type="text" id="negara" name="negara" class="form-control">
                 </div>
-                <div class="card mb-4">
+                <br>
+                <div>
                     <label for="tahun">Year:</label>
                     <input type="text" id="tahun" name="tahun" class="form-control">
                 </div>
-                <div class="card mb-4">
+                <br>
+                <div>
                     <label for="rating">Rating:</label>
                     <input type="text" id="rating" name="rating" class="form-control">
                 </div>
+                <br>
                 <button type="submit">Add</button>
             </form>
         </div>

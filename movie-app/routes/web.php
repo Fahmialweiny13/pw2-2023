@@ -4,6 +4,7 @@ use App\Http\Controllers\MovieController;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +20,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index']);
 
-Route::resource('/movies', MovieController::class);
-Route::resource('/genres', GenreController::class);
-Route::resource('/reviews', ReviewController::class);
+Route::group(['middleware' => 'auth'], function () {
+    Route::resource('/movies', MovieController::class);
+    Route::resource('/genres', GenreController::class);
+    Route::resource('/reviews', ReviewController::class);
+});
+
+Route::get('/register', [AuthController::class, 'showRegistrationForm']);
+Route::post('/register', [AuthController::class, 'register']);
+
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'login']);

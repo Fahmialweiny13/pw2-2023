@@ -25,21 +25,22 @@
             Edit Data
         </div>
         <div class="card-body">
-            <form method="POST" action="/movies/{{ $movie->id }}">
+            <form enctype="multipart/form-data" method="POST" action="/movies/{{ $movie->id }}">
                 @csrf
                 @method('PUT')
                 <label for="judul">Title:</label><br>
                 <input type="text" id="judul" name="judul" value="{{ $movie->judul }}" class="form-control"><br><br>
 
                 <label for="poster">Poster:</label><br>
-                <input type="text" id="poster" name="poster" value="{{ $movie->poster }}" class="form-control"><br><br>
+                <img style="width: 200px" src="/assets/img/{{$movie->poster}}" alt="">
+                <input type="file" id="poster" name="poster" value="{{ $movie->poster }}" class="form-control"><br><br>
 
                 <label for="genre_id">Genre:</label><br>
                 <select id="genre_id" name="genre_id">
                     @foreach ($genres as $genre)
-                        <option value="{{ $genre->id }}" class="form-control" {{ $genre->id == $movie->genre_id ? 'selected' : '' }}>{{ $genre->nama }}</option>
+                        <option value="{{ $genre->id }}" {{ $genre->id == $movie->genre_id ? 'selected' : '' }}>{{ $genre->nama }}</option>
                     @endforeach
-                </select><br><br>
+                </select class="form-control"><br><br>
 
                 <label for="negara">Country:</label><br>
                 <input type="text" id="negara" name="negara" value="{{ $movie->negara }}" class="form-control"><br><br>

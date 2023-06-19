@@ -27,26 +27,31 @@
         <div class="card-body">
             <form method="POST" action="/reviews">
                 @csrf
-                <div class="card mb-4">
+                <div>
                     <label for="film">Film:</label>
                     <input type="text" id="film" name="film" class="form-control"> 
                 </div>
-                <div class="card mb-4">
+                <br>
+                <div>
                     <label for="user">User:</label>
                     <input type="text" id="user" name="user" class="form-control">
                 </div>
-                <div class="card mb-4">
+                <br>
+                <div>
                     <label for="rating">Rating:</label>
                     <input type="float" id="rating" name="rating" class="form-control">
                 </div>
-                <div class="card mb-4">
+                <br>
+                <div>
                     <label for="review">Review:</label>
                     <input type="text" id="review" name="review" class="form-control">
                 </div>
-                <div class="card mb-4">
+                <br>
+                <div>
                     <label for="tanggal">Date:</label>
                     <input type="date" id="tanggal" name="tanggal" class="form-control">
                 </div>
+                <br>
                 <button type="submit">Add</button>
             </form>
         </div>

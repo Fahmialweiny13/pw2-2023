@@ -28,14 +28,16 @@
         <div class="card-body">
             <form method="POST" action="/genres">
                 @csrf
-                <div class="card mb-4">
+                <div>
                     <label for="nama">Genre Name:</label>
                     <input type="text" id="nama" name="nama" class="form-control">
                 </div>
-                <div class="card mb-4">
+                <br>
+                <div>
                     <label for="deskripsi">Deskripsi:</label>
                     <input type="text" id="deskripsi" name="deskripsi" class="form-control">
                 </div>
+                <br>
                 <button type="submit">Add</button>
             </form>
         </div>
